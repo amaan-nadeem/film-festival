@@ -1,0 +1,18 @@
+.button {
+  background: #092199 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 10px #00000029;
+  border-radius: 30px;
+  padding: 10px 0px;
+  color: white;
+  border: none;
+  box-shadow: none;
+  text-transform: capitalize;
+  min-width: 236px;
+
+  &:focus {
+    outline: none;
+  }
+  &.background-black {
+    background: black;
+  }
+}
