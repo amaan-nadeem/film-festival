@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import Swiper from "react-id-swiper"
+import { SliderRightArrow, SliderLeftArrow } from "../common/Icons"
 
 const Slider = ({ reviews, nextIcon, prevIcon }) => {
   const swiperRef = useRef(null)
@@ -36,12 +37,12 @@ const Slider = ({ reviews, nextIcon, prevIcon }) => {
           )
         })}
       </Swiper>
-      {/* <button className="prev-btn" onClick={goPrev}>
-        <img src={prevIcon} alt="" />
+      <button className="prev-btn" onClick={goPrev}>
+        <SliderLeftArrow width="49" height="50" fill="#ffffff" />
       </button>
       <button className="next-btn" onClick={goNext}>
-        <img src={nextIcon} alt="" />
-      </button> */}
+        <SliderRightArrow width="49" height="50" fill="#ffffff" />
+      </button>
     </div>
   )
 }

@@ -6,6 +6,7 @@ module.exports = {
       backgroundColor: {
         lightBlue: "#007AE6",
         dullishBlack: "#1F1F1F",
+        gray: "#f5f5f5"
       },
     },
   },
