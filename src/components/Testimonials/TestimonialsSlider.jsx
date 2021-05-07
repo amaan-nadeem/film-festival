@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import Swiper from "react-id-swiper"
-import { StarIcon, SliderLeftArrow, SliderRightArrow } from "../common/Icons"
+import { StarIcon } from "../common/Icons"
 
 const TestimonialsCard = ({
   title,
@@ -21,7 +21,7 @@ const TestimonialsCard = ({
       <div className="ratings flex justify-center">
         {Array.from({ length: ratings }).map((_, key) => (
           <div className="mr-4">
-            <StarIcon key={key} fill="#222" />
+            <StarIcon key={key} fill="#222"/>
           </div>
         ))}
       </div>
@@ -70,12 +70,12 @@ const Slider = ({ testimonials, nextIcon, prevIcon }) => {
           }
         )}
       </Swiper>
-      <button className="prev-btn" onClick={goPrev}>
-        <SliderLeftArrow width="49" height="50" fill=" #66891D" />
+      {/* <button className="prev-btn" onClick={goPrev}>
+        <img src={prevIcon} alt="" />
       </button>
       <button className="next-btn" onClick={goNext}>
-        <SliderRightArrow width="49" height="50" fill="#66891D" />
-      </button>
+        <img src={nextIcon} alt="" />
+      </button> */}
     </div>
   )
 }

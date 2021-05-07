@@ -19,9 +19,7 @@ const TimeLine = ({ data }) => {
           />
 
           <div className="timelineElement-date">
-            <div className="timelineElement-dateWrapper">
-              <p>{element.date}</p>
-            </div>
+            <div className="timelineElement-dateWrapper">{element.date}</div>
 
             <img
               src={element.logo}

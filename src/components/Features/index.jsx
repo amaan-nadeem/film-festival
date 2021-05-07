@@ -15,7 +15,7 @@ const FeatureCard = ({ title, logo, description }) => (
 )
 const Features = ({ title, contentBoxes }) => {
   return (
-    <section className="app-feature-section section-padding-bottom section-margin container-padding">
+    <section className="app-feature-section section-margin container-padding">
       <div className="feature-content text-center">
         <h1 className="title text-5xl font-bold section-heading">{title}</h1>
       </div>

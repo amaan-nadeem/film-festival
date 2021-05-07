@@ -1,0 +1,17 @@
+.events-container {
+  display: flex;
+  gap: 34px;
+  margin-top: 44px;
+  margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    gap: 34px;
+    flex-direction: column;
+  }
+}

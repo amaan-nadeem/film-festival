@@ -1,24 +1,28 @@
 import * as React from "react"
 import Header from "../components/common/Header"
 import Features from "../components/Features"
-import FilmsSlider from "../components/FilmsSlider"
 import Hero from "../components/Hero"
-import LatestBlogs from "../components/LatestBlogs"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import Testimonials from "../components/Testimonials"
-import featuresData from "../site-data/features"
 import heroSectionData from "../site-data/Hero"
+import featuresData from "../site-data/features"
+
+import LatestBlogs from "../components/LatestBlogs"
 import latestBlogsData from "../site-data/latest-blogs"
+
+import Testimonials from "../components/Testimonials"
 import testimonialsData from "../site-data/testimonials"
+
 import Timeline from "../components/Timeline"
 import TimelineData from "../site-data/timeline"
-import SocialMedia from "../components/SocialMedia"
-import socialMediaData from "../site-data/social-media"
+
+import eventData from "../site-data/events"
+import Events from "../components/Events"
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <div>
+      Home
       <SEO title="Home" />
       <div className="top-section">
         <Header />
@@ -32,24 +36,20 @@ const IndexPage = () => {
         description={featuresData.description}
         contentBoxes={featuresData.featureBoxes}
       />
-      <Timeline data={{ TimelineData }} />
       <LatestBlogs
         title={latestBlogsData.title}
         description={latestBlogsData.description}
         linkText={latestBlogsData.linkText}
         blogs={latestBlogsData.blogs}
       />
-      <FilmsSlider films={[{}, {}, {}, {}]} />
       <Testimonials
         title={testimonialsData.title}
         description={testimonialsData.description}
         testimonials={testimonialsData.testimonials}
       />
-      <SocialMedia
-        title={socialMediaData.title}
-        mediaPlatforms={socialMediaData.mediaPlatforms}
-      />
-    </Layout>
+      <Timeline data={{ TimelineData }} />
+      <Events {...eventData} />
+    </div>
   )
 }
 

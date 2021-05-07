@@ -20,9 +20,10 @@
     }
 
     .prev-btn {
+      width: 35px;
+      height: 60px;
       position: absolute;
       top: 50%;
-      transform: translate(0, -50%);
       left: 0;
       z-index: 1;
       outline: none;
@@ -35,11 +36,11 @@
       }
     }
     .next-btn {
+      width: 35px;
+      height: 60px;
       z-index: 1;
       position: absolute;
       top: 50%;
-      transform: translate(0, -50%);
-
       right: 0px;
       outline: none;
       @media (max-width: 786px) {

@@ -2,8 +2,7 @@
   .testimonials-content {
     margin-bottom: 82px;
     .title {
-      font: 50px;
-      font-weight: 600;
+      font: normal normal bold 50px/65px Poppins;
       letter-spacing: 0px;
       color: #66891d;
       margin-bottom: 30px;
@@ -18,7 +17,6 @@
     }
     .description {
       font-size: 20px;
-      font-weight: 400;
       margin-bottom: 85px;
       @media (max-width: 576px) {
         font-size: 18px;
@@ -32,15 +30,11 @@
   .swiper-container {
     padding: 70px 0px;
   }
-  .testimonials-slider-container {
-    padding: 0 20px;
-  }
   .testimonials-card-container {
     padding: 30px;
     @media (max-width: 576px) {
       padding: 10px;
     }
-
     .testimonials-slider-card {
       .wrapper {
         padding: 53px 124px;
@@ -51,54 +45,17 @@
 
         h1 {
           text-align: center;
-          font: 50px;
-          font-weight: 600;
+          font: normal normal bold 50px/60px Poppins;
           letter-spacing: 0px;
           color: #ffffff;
           padding-bottom: 30px;
         }
         p {
-          font: 25px;
-          font-weight: 600;
+          font: normal normal normal 25px/40px Poppins;
           letter-spacing: 0px;
           color: #ffffff;
           text-align: center;
         }
-      }
-    }
-  }
-
-  .testimonials-slider-section {
-    position: relative;
-    .prev-btn {
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-      left: 0;
-      z-index: 1;
-      outline: none;
-      @media (max-width: 786px) {
-        width: 25px;
-        height: 30px;
-      }
-      @media (max-width: 576px) {
-        display: none;
-      }
-    }
-    .next-btn {
-      z-index: 1;
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-
-      right: 0px;
-      outline: none;
-      @media (max-width: 786px) {
-        width: 25px;
-        height: 30px;
-      }
-      @media (max-width: 576px) {
-        display: none;
       }
     }
   }
