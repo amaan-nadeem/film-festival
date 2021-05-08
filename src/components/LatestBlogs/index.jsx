@@ -1,10 +1,11 @@
 import React from "react"
 import "./index.scss"
 import { Link } from "gatsby"
+import classnames from "classnames"
 
-const LatestBlogs = ({ title, description, linkText, blogs }) => {
+const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
   return (
-    <section className="bg-gray section-padding">
+    <section className={classnames("section-padding", isBgGray && "bg-gray")}>
       <div className="app-latest-blogs-section container-padding">
         <div className="latest-blogs-content text-center">
           <h1 className="title text-5xl font-bold section-heading">{title}</h1>

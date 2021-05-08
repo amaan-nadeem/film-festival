@@ -1,10 +1,11 @@
+import classnames from "classnames"
 import React, { useRef } from "react"
 import Swiper from "react-id-swiper"
-import { StarIcon, SliderLeftArrow, SliderRightArrow } from "../common/Icons"
+import { SliderLeftArrow, SliderRightArrow } from "../common/Icons"
 import VideoCard from "../VideoCard"
-import "./index.scss";
+import "./index.scss"
 
-const Slider = ({ films, nextIcon, prevIcon }) => {
+const Slider = ({ films }) => {
   const swiperRef = useRef(null)
   const params = {
     slidesPerView: 2,
@@ -52,16 +53,20 @@ const Slider = ({ films, nextIcon, prevIcon }) => {
   )
 }
 
-const FilmsSlider = ({ films }) => {
+const FilmsSlider = ({ films, isBgGray }) => {
   return (
-    <section className="films-slider-section section-padding-bottom section-container section-margin container-padding">
-      <h1 className="title section-heading">Watch Films Now!</h1>
-      <p className="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
-        fringilla magna.
-      </p>
-      <div className="films-slider-section">
-        <Slider films={films} />
+    <section
+      className={classnames("films-slider-section", isBgGray && "bg-gray")}
+    >
+      <div className="section-padding-bottom section-container section-margin container-padding">
+        <h1 className="title section-heading">Watch Films Now!</h1>
+        <p className="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
+          fringilla magna.
+        </p>
+        <div className="films-slider-section">
+          <Slider films={films} />
+        </div>
       </div>
     </section>
   )
