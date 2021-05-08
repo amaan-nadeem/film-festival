@@ -34,6 +34,7 @@ const IndexPage = () => {
       />
       <Timeline data={{ TimelineData }} />
       <LatestBlogs
+        isBgGray
         title={latestBlogsData.title}
         description={latestBlogsData.description}
         linkText={latestBlogsData.linkText}
