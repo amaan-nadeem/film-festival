@@ -2,16 +2,24 @@ import React from "react"
 
 import "./index.scss"
 
-const FestivalBox = ({ title, times, link, points, buyTicketsLink }) => (
+const FestivalBox = ({
+  title,
+  times,
+  link,
+  points,
+  buyTicketsLink,
+  btnText,
+}) => (
   <div className="festivalContainer">
     <h3 className="box-heading">{title}</h3>
     <ul className="itinerary">
-      {times.map(({ time, activity }) => (
-        <li key={time}>
-          <span className="itinerary-time">{time}</span>
-          <span className="itinerary-text">{activity}</span>
-        </li>
-      ))}
+      {times?.length > 0 &&
+        times.map(({ time, activity }) => (
+          <li key={time}>
+            <span className="itinerary-time">{time}</span>
+            <span className="itinerary-text">{activity}</span>
+          </li>
+        ))}
     </ul>
     <p className="festival-link" href={link}>
       Screening Order of Confirmed Attending Films
@@ -24,9 +32,11 @@ const FestivalBox = ({ title, times, link, points, buyTicketsLink }) => (
         </li>
       ))}
     </ul>
-    <a href={buyTicketsLink} className="festival-buyTicket">
-      Buy Tickets!
-    </a>
+    {btnText && (
+      <a href={buyTicketsLink} className="festival-buyTicket">
+        Buy Tickets!
+      </a>
+    )}
   </div>
 )
 

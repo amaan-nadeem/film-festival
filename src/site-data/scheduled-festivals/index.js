@@ -43,6 +43,7 @@ const scheduledFestivalsData = {
         "Granny’s Treasures, Directed by Kevin R. Phipps (Arizona)",
       ],
       buyTicketsLink: "#",
+      btnText: "Buy Tickets!",
     },
     {
       title: "Day 2: Friday May 15, 2021",
@@ -71,6 +72,7 @@ const scheduledFestivalsData = {
         "Exterminator, Directed by Duncan Birmingham (California)",
         "Granny’s Treasures, Directed by Kevin R. Phipps (Arizona)",
       ],
+      btnText: "Buy Tickets!",
     },
     {
       title: "Day 3: Friday May 16, 2021",
@@ -93,6 +95,7 @@ const scheduledFestivalsData = {
         "Exterminator, Directed by Duncan Birmingham (California)",
         "Granny’s Treasures, Directed by Kevin R. Phipps (Arizona)",
       ],
+      btnText: "Buy Tickets!",
     },
   ],
 }

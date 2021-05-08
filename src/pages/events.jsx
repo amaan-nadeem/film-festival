@@ -49,6 +49,7 @@ const Events = () => {
         isBgGray
         title={awardCategoriesData.title}
         percentageBoxes={awardCategoriesData.percentageBoxes}
+        listing={awardCategoriesData.listing}
       />
       <FilmsSlider films={[{}, {}, {}, {}]} />
       <LatestBlogs
