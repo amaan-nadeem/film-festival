@@ -44,6 +44,9 @@
 
   .hero-slider-main {
     position: relative;
+    @media(max-width: 1500px){
+      display: none;
+    }
   }
   .hero-slider-container {
     @media (max-width: 786px) {

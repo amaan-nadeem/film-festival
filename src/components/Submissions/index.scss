@@ -1,12 +1,46 @@
-.submissions{
-    .submission-boxes{
-        margin-top: 120px;
-        .content-box{
-            .logo{
-                background-color: white;
-                border-radius: 50%;
-            }
+$base_color: #66891d;
+$medium_font: normal normal 500 20px/35px Poppins;
+$large_font: normal normal bold 40px/65px Poppins;
 
-        }
+.submissions {
+  .submission-boxes {
+    margin-top: 120px;
+    .content-box {
+      .logo {
+        background-color: white;
+        border-radius: 50%;
+      }
     }
+  }
+
+  .categories-listing {
+    margin-top: 100px;
+    background-color: white;
+    box-shadow: 10px 10px 30px #00000029;
+    padding: 60px 135px;
+    h2 {
+      color: $base_color;
+      font: $large_font;
+      text-align: center;
+      margin-bottom: 34px;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 30px;
+      justify-content: space-between;
+      .category {
+        display: flex;
+        align-items: center;
+        .number {
+          color: $base_color;
+          font: $medium_font;
+        }
+        .bullet {
+          font: $medium_font;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }

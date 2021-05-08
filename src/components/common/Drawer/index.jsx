@@ -14,9 +14,12 @@ const Drawer = ({ setIsActive, isActive }) => {
         <div className="flex flex-col justify-between h-full">
           <ul>
             {[
-              { title: "About", link: "event" },
-              { title: "FAQ", link: "coupon-main" },
-              { title: "Contact", link: "stores" },
+              { title: "Home", link: "event" },
+              { title: "Events", link: "coupon-main" },
+              { title: "Blog", link: "stores" },
+              { title: "FilmFreeWay", link: "stores" },
+              { title: "Networking", link: "stores" },
+              { title: "Contact Us", link: "stores" },
             ].map(({ title, link }, index) => {
               return (
                 <li key={index}>
@@ -25,7 +28,6 @@ const Drawer = ({ setIsActive, isActive }) => {
               )
             })}
           </ul>
-          <Button>Download App</Button>
         </div>
       </div>
     </>

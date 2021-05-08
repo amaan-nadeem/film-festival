@@ -42,7 +42,8 @@ const Events = () => {
       />
       <Submissions
         title={submissionsData.title}
-        contentBoxes={submissionsData.featureBoxes}
+        contentBoxes={submissionsData.contentBoxes}
+        categoriesListing={submissionsData.categoriesListing}
       />
       <AwardCategories
         isBgGray

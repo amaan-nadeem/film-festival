@@ -9,7 +9,6 @@ $baseColor: #66891d;
   gap: 48px;
   margin-top: 44px;
   margin-bottom: 12px;
-
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -22,7 +21,6 @@ $baseColor: #66891d;
   }
 
   .festivalContainer {
-    
     padding: 60px 68px;
     background-color: #fff;
     box-shadow: 10px 10px 30px #00000029;
