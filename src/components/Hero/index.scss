@@ -8,6 +8,40 @@
   background-size: cover;
   margin-top: -100px;
 
+  &.eventBanner {
+    text-align: center;
+    position: relative;
+    margin-bottom: 120px;
+    .eventBanner-content {
+      z-index: 10;
+      h1 {
+        color: white;
+        font: normal normal bold 50px/60px Poppins;
+        letter-spacing: 0px;
+      }
+      h2 {
+        margin-top: 30px;
+        text-decoration: underline;
+        font: normal normal bold 25px/40px Poppins;
+        letter-spacing: 0px;
+        color: #ffffff;
+      }
+
+      .eventBanner-content-box {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 10px 10px 30px #00000029;
+        padding: 82px 107px;
+        max-width: 1571px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: -25%;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+
   .hero-slider-main {
     position: relative;
   }
