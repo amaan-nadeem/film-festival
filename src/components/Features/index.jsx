@@ -1,18 +1,8 @@
 import React from "react"
 import "./index.scss"
+import ContentCard from "../common/ContentCard"
 
-const FeatureCard = ({ title, logo, description }) => (
-  <div
-    className={"feature-box text-center flex flex-col justify-center"}
-    key={title}
-  >
-    <img className="logo" src={logo} alt="" />
-    <div className="feature-box-content mt-5">
-      <h2 className="title font-bold">{title}</h2>
-      <p className="description mt-2">{description}</p>
-    </div>
-  </div>
-)
+
 const Features = ({ title, contentBoxes }) => {
   return (
     <section className="app-feature-section section-padding-bottom section-margin container-padding">
@@ -21,7 +11,7 @@ const Features = ({ title, contentBoxes }) => {
       </div>
       <div className="feature-boxes justify-center grid sm:grid-cols-2 gap-5 md:flex">
         {contentBoxes.map(({ title, description, logo }) => (
-          <FeatureCard title={title} description={description} logo={logo} />
+          <ContentCard title={title} description={description} logo={logo} />
         ))}
       </div>
     </section>
