@@ -14,6 +14,14 @@ const Slider = ({ films }) => {
       el: ".swiper-pagination",
       clickable: true,
     },
+    breakpoints: {
+      1280: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
+    },
   }
 
   const goNext = () => {

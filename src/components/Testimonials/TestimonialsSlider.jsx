@@ -32,11 +32,22 @@ const TestimonialsCard = ({
 const Slider = ({ testimonials, nextIcon, prevIcon }) => {
   const swiperRef = useRef(null)
   const params = {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+    },
+    breakpoints: {
+      1280: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      320: {
+        slidesPerView: 1,
+      },
     },
   }
 
@@ -82,9 +93,7 @@ const Slider = ({ testimonials, nextIcon, prevIcon }) => {
 
 const TestimonialsSlider = ({ testimonials }) => (
   <section className="testimonials-slider-section section-container container-padding">
-    <div className="testimonials-slider-container">
-      <Slider testimonials={testimonials} />
-    </div>
+    <Slider testimonials={testimonials} />
   </section>
 )
 

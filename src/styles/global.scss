@@ -17,7 +17,6 @@
   }
 }
 
-
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -41,7 +40,7 @@ a {
     padding: 0 30px;
   }
   @media (max-width: 576px) {
-    padding: 0 20px;
+    padding: 0 30px;
   }
 }
 
@@ -53,7 +52,7 @@ a {
 .section-margin {
   padding-top: 120px;
   @media (max-width: 786px) {
-    padding-top: 80px;
+    padding-top: 50px;
   }
 }
 
@@ -63,22 +62,44 @@ a {
   letter-spacing: 0px;
   color: #66891d;
   opacity: 1;
+
+  @media (max-width: 768px) {
+    font: normal normal bold 30px/35px Poppins;
+  }
 }
 
-.section-padding{
-  padding: 120px 124px;
-}
-
-.section-padding-bottom{
+.section-padding {
+  padding-top: 120px;
   padding-bottom: 120px;
+  max-width: 1920px;
+  margin: 0 auto;
+  @media (max-width: 1192px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: 768px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.section-padding-bottom {
+  padding-bottom: 120px;
+  @media (max-width: 786px) {
+    padding-bottom: 50px;
+  }
 }
 .swiper-pagination-bullet {
   width: 20px;
   height: 20px;
   outline: none;
-  background: white;
+  background: #f2f2f2;
   opacity: 1;
 
+  @media (max-width: 576px) {
+    width: 10px;
+    height: 10px;
+  }
   &.swiper-pagination-bullet-active {
     background: #66891d 0% 0% no-repeat padding-box;
   }
@@ -86,4 +107,7 @@ a {
 
 .swiper-wrapper {
   margin-bottom: 50px !important;
+  @media (max-width: 768px) {
+    margin-bottom: 20px !important;
+  }
 }

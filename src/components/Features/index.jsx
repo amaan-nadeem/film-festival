@@ -1,43 +1,13 @@
 import React, { useRef } from "react"
 import ContentCard from "../common/ContentCard"
 import "./index.scss"
-import Swiper from "react-id-swiper"
+
 import useWindowSize from "../../utils/useWindowWidth"
-
-const Slider = ({ contentBoxes }) => {
-  const swiperRef = useRef(null)
-  const params = {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  }
-
-  return (
-    <div className="features-slider-container">
-      <Swiper {...params} ref={swiperRef}>
-        {contentBoxes.map(({ title, description, logo }) => {
-          return (
-            <div>
-              <ContentCard
-                title={title}
-                description={description}
-                logo={logo}
-              />
-            </div>
-          )
-        })}
-      </Swiper>
-    </div>
-  )
-}
+import Slider from "../common/Slider"
 
 const Features = ({ title, contentBoxes }) => {
   const windowWidth = useWindowSize()
 
-  console.log("windowSize", windowWidth)
   return (
     <section className="app-feature-section section-padding-bottom section-margin container-padding">
       <div className="feature-content text-center">
@@ -53,7 +23,17 @@ const Features = ({ title, contentBoxes }) => {
       <div>
         {windowWidth[0] < 1080 && (
           <div className="features-slider-container">
-            <Slider contentBoxes={contentBoxes} />
+            <Slider contentBoxes={contentBoxes}>
+              {contentBoxes.map(({ title, description, logo }) => (
+                <div>
+                  <ContentCard
+                    title={title}
+                    description={description}
+                    logo={logo}
+                  />
+                </div>
+              ))}
+            </Slider>
           </div>
         )}
       </div>

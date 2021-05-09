@@ -6,8 +6,8 @@ const CategoriesListing = ({ title, categories }) => (
     <div className="categories">
       {categories.map((bullet, index) => (
         <div className="category" key={bullet}>
-          <span className="number">{index + 1}.</span>
-          <span className="bullet">{bullet}</span>
+          <p className="number">{index + 1}.</p>
+          <p className="bullet">{bullet}</p>
         </div>
       ))}
     </div>

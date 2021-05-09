@@ -12,33 +12,68 @@ $large_font: normal normal bold 40px/65px Poppins;
       }
     }
   }
+  .submissions-slider-container {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 
   .categories-listing {
+    margin: 0 auto;
     margin-top: 100px;
     background-color: white;
     box-shadow: 10px 10px 30px #00000029;
-    padding: 60px 135px;
+    padding: 60px 30px;
+    max-width: 1400px;
+    @media (max-width: 992px) {
+      padding: 40px 30px;
+      margin-top: 50px;
+    }
     h2 {
       color: $base_color;
       font: $large_font;
       text-align: center;
       margin-bottom: 34px;
+      @media (max-width: 768px) {
+        font: normal normal bold 25px/40px Poppins;
+        color: black;
+        text-align: left;
+        margin-bottom: 21px;
+      }
     }
     .categories {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 30px;
+      grid-gap: 20px 10px;
+      max-width: 1192px;
+      margin: 0 auto;
+
       justify-content: space-between;
+
+      @media (max-width: 1192px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+      }
       .category {
         display: flex;
-        align-items: center;
+
         .number {
           color: $base_color;
           font: $medium_font;
+          width: 30px;
         }
         .bullet {
           font: $medium_font;
           margin-left: 10px;
+          width: calc(100% - 30px);
+          @media (max-width: 768px) {
+            font: normal normal 500 18px/30px Poppins;
+          }
         }
       }
     }

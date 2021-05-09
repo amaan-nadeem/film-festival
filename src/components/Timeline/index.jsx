@@ -4,7 +4,7 @@ import "./index.scss"
 
 
 const TimeLine = ({ data }) => (
-  <div className="timelineWrapper">
+  <div className="timelineWrapper container-padding">
     {data.TimelineData.map((element, idx) => (
       <div
         key={idx}

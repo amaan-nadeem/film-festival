@@ -1,20 +1,12 @@
 .app-feature-section {
   padding-bottom: 120px;
   .feature-content {
-    margin-bottom: 82px;
-
     .title {
-      font: 50px;
-      font-weight: 600;
       letter-spacing: 0px;
       color: #66891d;
       margin-bottom: 120px;
-      @media (max-width: 1280px) {
-        font-size: 50px;
-        margin-bottom: 20px;
-      }
-      @media (max-width: 576px) {
-        font-size: 40px;
+      @media (max-width: 786px) {
+        margin-bottom: 30px;
       }
     }
     .description {
@@ -24,15 +16,7 @@
       }
     }
   }
-  .swiper-container {
-    padding: 70px 0px;
-  }
-  @media (max-width: 1280px) {
-    .content-box {
-      margin-right: 0;
-      margin: 0 auto;
-    }
-  }
+
   .feature-boxes {
     @media (max-width: 1280px) {
       margin-top: 60px;

@@ -7,10 +7,9 @@ const ScheduledFestivals = ({ isBgGray, title, festivals }) => (
   <SectionWrapper isBgGray={isBgGray} title={title}>
     <div className="festivals-container">
       <div className="col">
-        {festivals.map((eve, idx) => idx % 2 === 0 && <FestivalBox {...eve} />)}
-      </div>
-      <div className="col">
-        {festivals.map((eve, idx) => idx % 2 === 1 && <FestivalBox {...eve} />)}
+        {festivals.map((eve, idx) => (
+          <FestivalBox {...eve} className={idx == 1 && "row-span-2"} />
+        ))}
       </div>
     </div>
   </SectionWrapper>

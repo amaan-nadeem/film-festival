@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import classNames from "classnames"
 
 const FestivalBox = ({
   title,
@@ -8,8 +9,9 @@ const FestivalBox = ({
   points,
   buyTicketsLink,
   btnText,
+  className,
 }) => (
-  <div className="festivalContainer">
+  <div className={classNames("festivalContainer", className)}>
     <h3 className="box-heading">{title}</h3>
     <ul className="itinerary">
       {times?.length > 0 &&
