@@ -1,7 +1,7 @@
 import React from "react"
+import FestivalBox from "../ScheduledFestivals/FestivalBox"
 import SectionWrapper from "../SectionWrapper"
 import "./index.scss"
-import FestivalBox from "../ScheduledFestivals/FestivalBox"
 
 const PercentageBox = ({ logo, title, description }) => (
   <div className="percentage-box">

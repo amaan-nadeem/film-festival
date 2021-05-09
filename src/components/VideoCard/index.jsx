@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import YouTube from "react-youtube";
-import PlayButton from "./PlayButton";
-import "./index.scss";
+import React, { useState } from "react"
+import YouTube from "react-youtube"
+import "./index.scss"
+import PlayButton from "./PlayButton"
 
 const VideoCard = ({ video, poster, variant, youtubeId }) => {
-  const [isControl, setIsControl] = useState(false);
-  const [btnText, setBtnText] = useState("Play Video");
+  const [isControl, setIsControl] = useState(false)
+  const [btnText, setBtnText] = useState("Play Video")
   const onVideoPlay = () => {
-    setIsControl(!isControl);
-    const video = document.getElementsByTagName("video")[0];
-    const videoButton = document.getElementsByClassName("video-overlay")[0];
+    setIsControl(!isControl)
+    const video = document.getElementsByTagName("video")[0]
+    const videoButton = document.getElementsByClassName("video-overlay")[0]
     if (isControl) {
-      video.pause();
+      video.pause()
     } else {
-      video.play();
+      video.play()
     }
-    if (!videoButton) return;
-    videoButton.style.display = "none";
-  };
+    if (!videoButton) return
+    videoButton.style.display = "none"
+  }
 
   const onPlay = () => {
-    const videoButton = document.getElementsByClassName("video-overlay")[0];
-    if (!videoButton) return;
-    videoButton.style.display = "none";
-  };
+    const videoButton = document.getElementsByClassName("video-overlay")[0]
+    if (!videoButton) return
+    videoButton.style.display = "none"
+  }
 
   const opts = {
     height: "390",
@@ -31,7 +31,7 @@ const VideoCard = ({ video, poster, variant, youtubeId }) => {
     playerVars: {
       rel: 0,
     },
-  };
+  }
 
   return (
     <section className="section-video">
@@ -104,7 +104,7 @@ const VideoCard = ({ video, poster, variant, youtubeId }) => {
         </div> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default VideoCard;
+export default VideoCard

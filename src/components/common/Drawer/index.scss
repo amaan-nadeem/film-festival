@@ -18,7 +18,7 @@
   top: 0;
   right: -300px;
   background-color: #000000;
-  transition: right 0.2s ease-in-out;
+  transition: right 0.2s ease;
 
   .close {
     right: 30px;
@@ -43,14 +43,18 @@
     height: calc(100% - 181px);
 
     li {
-      display: block;
       padding: 10px 0;
-
+      margin-bottom: 30px;
+      svg{
+        width: 20px;
+        height: 20px;
+        fill: white;
+      }
       a {
         display: inline-block;
         text-align: center;
         font-size: 22px;
-        line-height: 50px;
+        // line-height: 50px;
         color: #ffffff;
         text-transform: uppercase;
         transition: all 0.2s linear;

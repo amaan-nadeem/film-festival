@@ -1,5 +1,5 @@
-import React from "react"
 import classnames from "classnames"
+import React from "react"
 
 const SectionWrapper = ({ title, isBgGray, children, className }) => (
   <section

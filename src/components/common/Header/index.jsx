@@ -1,10 +1,9 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
 import Logo from "../../../assets/logo.png"
-import Button from "../Button"
+import Drawer from "../Drawer"
 import { HamburgerIcon, SearchIcon } from "../Icons"
 import "./index.scss"
-import Drawer from "../Drawer"
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
@@ -17,9 +16,9 @@ const Header = () => {
         <div className="links desktop">
           <ul className="links-ul">
             {[
-              { text: "Events", link: "/about" },
-              { text: "About Us", link: "/faq" },
-              { text: "Blog", link: "/contact" },
+              { text: "Events", link: "/events" },
+              { text: "About Us", link: "/about" },
+              { text: "Blog", link: "/blog" },
               { text: "FilmFreeWay", link: "/film-free-way" },
               { text: "Networking", link: "/networking" },
               { text: "Contact Us", link: "/contact-us" },
@@ -34,7 +33,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="mobile-nav">
-          <div onClick={() => setIsActive(!isActive)}>
+          <div className="hamburger" onClick={() => setIsActive(!isActive)}>
             <HamburgerIcon />
           </div>
           <Drawer isActive={isActive} setIsActive={setIsActive} />

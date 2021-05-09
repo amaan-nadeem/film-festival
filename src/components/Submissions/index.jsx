@@ -1,8 +1,8 @@
 import React from "react"
 import ContentCard from "../common/ContentCard"
 import SectionWrapper from "../SectionWrapper"
-import "./index.scss"
 import CategoriesListing from "./CategoriesListing"
+import "./index.scss"
 
 const Submissions = ({ isBgGray, title, contentBoxes, categoriesListing }) => (
   <SectionWrapper className="submissions" isBgGray={isBgGray} title={title}>

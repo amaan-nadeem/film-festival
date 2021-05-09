@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import Swiper from "react-id-swiper"
-import { StarIcon, SliderLeftArrow, SliderRightArrow } from "../common/Icons"
+import { SliderLeftArrow, SliderRightArrow, StarIcon } from "../common/Icons"
 
 const TestimonialsCard = ({
   title,
@@ -80,14 +80,12 @@ const Slider = ({ testimonials, nextIcon, prevIcon }) => {
   )
 }
 
-const TestimonialsSlider = ({ testimonials }) => {
-  return (
-    <section className="testimonials-slider-section section-container container-padding">
-      <div className="testimonials-slider-container">
-        <Slider testimonials={testimonials} />
-      </div>
-    </section>
-  )
-}
+const TestimonialsSlider = ({ testimonials }) => (
+  <section className="testimonials-slider-section section-container container-padding">
+    <div className="testimonials-slider-container">
+      <Slider testimonials={testimonials} />
+    </div>
+  </section>
+)
 
 export default TestimonialsSlider

@@ -53,23 +53,21 @@ const Slider = ({ films }) => {
   )
 }
 
-const FilmsSlider = ({ films, isBgGray }) => {
-  return (
-    <section
-      className={classnames("films-slider-section", isBgGray && "bg-gray")}
-    >
-      <div className="section-padding-bottom section-container section-margin container-padding">
-        <h1 className="title section-heading">Watch Films Now!</h1>
-        <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
-          fringilla magna.
-        </p>
-        <div className="films-slider-section">
-          <Slider films={films} />
-        </div>
+const FilmsSlider = ({ films, isBgGray }) => (
+  <section
+    className={classnames("films-slider-section", isBgGray && "bg-gray")}
+  >
+    <div className="section-padding-bottom section-container section-margin container-padding">
+      <h1 className="title section-heading">Watch Films Now!</h1>
+      <p className="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
+        fringilla magna.
+      </p>
+      <div className="films-slider-section">
+        <Slider films={films} />
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 export default FilmsSlider

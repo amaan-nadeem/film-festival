@@ -2,7 +2,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types"
 import React from "react"
 
-
 const RichTextRenderer = ({ content, options, classes }) => {
   const defaultOptions = {
     renderNode: {

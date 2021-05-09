@@ -1,8 +1,7 @@
 import React, { useRef } from "react"
 import Swiper from "react-id-swiper"
-import { StarIcon } from "../common/Icons"
-import "./index.scss"
 import HeroSlider from "../Hero/HeroSlider"
+import "./index.scss"
 
 const ReviewsSlider = ({ reviews, nextIcon, prevIcon }) => {
   const swiperRef = useRef(null)
@@ -54,18 +53,16 @@ const Reviews = ({
   titleBgImage,
   customerReviews,
   reviewsSectionData,
-}) => {
-  return (
-    <section className="reviews-section section-container section-margin container-padding">
-      <div className="reviews-slider-container">
-        <HeroSlider
-          nextIcon={reviewsSectionData.nextIcon.default}
-          prevIcon={reviewsSectionData.prevIcon.default}
-          reviews={customerReviews}
-        />
-      </div>
-    </section>
-  )
-}
+}) => (
+  <section className="reviews-section section-container section-margin container-padding">
+    <div className="reviews-slider-container">
+      <HeroSlider
+        nextIcon={reviewsSectionData.nextIcon.default}
+        prevIcon={reviewsSectionData.prevIcon.default}
+        reviews={customerReviews}
+      />
+    </div>
+  </section>
+)
 
 export default Reviews

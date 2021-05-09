@@ -35,7 +35,7 @@ const Events = () => {
         description={featuresData.description}
         contentBoxes={featuresData.featureBoxes}
       />
-      <ScheduledFestivals
+      {/* <ScheduledFestivals
         isBgGray
         title={scheduledFestivalsData.title}
         festivals={scheduledFestivalsData.festivals}
@@ -62,7 +62,7 @@ const Events = () => {
       <SocialMedia
         title={socialMediaData.title}
         mediaPlatforms={socialMediaData.mediaPlatforms}
-      />
+      /> */}
     </Layout>
   )
 }
