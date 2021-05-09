@@ -1,0 +1,11 @@
+.slider-container{
+    .swiper-container {
+        padding: 70px 20px;
+        @media (max-width: 768px) {
+          padding: 50px 20px;
+          .swiper-wrapper{
+            margin-bottom: 20px;
+          }
+        }
+      }
+}
