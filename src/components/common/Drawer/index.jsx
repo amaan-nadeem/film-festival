@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import { CrossIcon, SliderRightArrow } from "../Icons"
 import "./index.scss"
+import { navigate } from "gatsby"
 
 const Drawer = ({ setIsActive, isActive }) => (
   <>
@@ -16,7 +17,7 @@ const Drawer = ({ setIsActive, isActive }) => (
             <CrossIcon />
           </li>
           {[
-            { title: "Home", link: "/" },
+            { title: "Home", link: "" },
             { title: "Events", link: "events" },
             { title: "Blog", link: "blog" },
             { title: "FilmFreeWay", link: "film-free-way" },
@@ -24,7 +25,11 @@ const Drawer = ({ setIsActive, isActive }) => (
             { title: "Contact Us", link: "contact-us" },
           ].map(({ title, link }, index) => {
             return (
-              <li key={index} className="flex justify-between items-center">
+              <li
+                key={index}
+                className="flex justify-between items-center"
+                onClick={() => navigate(`/${link}`)}
+              >
                 <Link to={`/${link}`}>{title}</Link>
                 <SliderRightArrow />
               </li>

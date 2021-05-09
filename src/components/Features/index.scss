@@ -2,6 +2,7 @@
   padding-bottom: 120px;
   .feature-content {
     margin-bottom: 82px;
+
     .title {
       font: 50px;
       font-weight: 600;
@@ -23,10 +24,18 @@
       }
     }
   }
+  .swiper-container {
+    padding: 70px 0px;
+  }
+  @media (max-width: 1280px) {
+    .content-box {
+      margin-right: 0;
+      margin: 0 auto;
+    }
+  }
   .feature-boxes {
     @media (max-width: 1280px) {
       margin-top: 60px;
     }
-    
   }
 }

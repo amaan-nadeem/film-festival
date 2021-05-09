@@ -38,11 +38,15 @@
         left: 50%;
         right: -25%;
         transform: translate(-50%, 50%);
+        @media (max-width: 768px) {
+          padding: 27px 19px;
+        }
       }
     }
   }
 
   .hero-slider-main {
+    z-index: 11;
     position: relative;
     @media(max-width: 1500px){
       display: none;
