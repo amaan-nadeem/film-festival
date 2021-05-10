@@ -22,8 +22,8 @@ const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
   const windowWidth = useWindowSize()
   return (
     <section className={classnames("section-padding", isBgGray && "bg-gray")}>
-      <div className="app-latest-blogs-section container-padding">
-        <div className="latest-blogs-content text-center">
+      <div className="app-latest-blogs-section ">
+        <div className="latest-blogs-content text-center container-padding">
           <h1 className="title text-5xl font-bold section-heading">{title}</h1>
           <p className="description text-2xl ">{description}</p>
           {linkText && (

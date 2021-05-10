@@ -13,8 +13,8 @@ const SocialMedia = ({ title, mediaPlatforms }) => {
   const windowWidth = useWindowSize()
   return (
     <section className="section-padding">
-      <div className="app-social-media-section container-padding">
-        <div className="social-media-content text-center">
+      <div className="app-social-media-section ">
+        <div className="social-media-content text-center container-padding">
           <h1 className="title text-5xl font-bold section-heading">{title}</h1>
         </div>
         {windowWidth[0] >= 1080 && (

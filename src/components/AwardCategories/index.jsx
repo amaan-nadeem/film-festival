@@ -22,6 +22,7 @@ const AwardCategories = ({ isBgGray, title, percentageBoxes, listing }) => {
       className="award-categories"
       isBgGray={isBgGray}
       title={title}
+      isNoPadding
     >
       {windowWidth[0] >= 1080 && (
         <div className="percentage-boxes grid grid-cols-3 lg:grid-cols-4 justify-center items-center">
@@ -52,7 +53,7 @@ const AwardCategories = ({ isBgGray, title, percentageBoxes, listing }) => {
           </div>
         )}
       </div>
-      <div className="award-categories-listing grid lg:grid-cols-2 gap-10">
+      <div className="award-categories-listing grid lg:grid-cols-2 gap-10 container-padding">
         {listing.map(({ ...eve }) => (
           <FestivalBox {...eve} />
         ))}

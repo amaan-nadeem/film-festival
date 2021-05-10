@@ -56,7 +56,7 @@ $baseColor: #66891d;
     }
     @media (max-width: 576px) {
       color: black;
-      font: normal normal bold 25px/30px Poppins;
+      font: normal normal bold 20px/30px Poppins;
       margin-bottom: 20.86px;
     }
   }
@@ -76,7 +76,7 @@ $baseColor: #66891d;
       display: block;
       width: 120px;
       @media (max-width: 576px) {
-        font: normal normal normal 20px/35px Poppins;
+        font: normal normal normal 14px/35px Poppins;
       }
     }
     .itinerary-text {
@@ -85,7 +85,8 @@ $baseColor: #66891d;
       display: block;
       width: calc(100% - 150px);
       @media (max-width: 576px) {
-        font: normal normal normal 20px/35px Poppins;
+        width: calc(100% - 20px);
+        font: normal normal normal 14px/35px Poppins;
       }
     }
   }
@@ -102,8 +103,8 @@ $baseColor: #66891d;
     margin-bottom: 25px;
     font-weight: 500;
     @media (max-width: 576px) {
-      margin-bottom: 10px;
-    }
+      font:  normal normal normal 14px/25px Poppins
+     }
   }
 
   .festival-points {
@@ -122,12 +123,18 @@ $baseColor: #66891d;
         align-items: flex-start;
         font-weight: 600;
         font: $mediumFont;
+        @media (max-width: 576px) {
+         font:  normal normal normal 14px/25px Poppins
+        }
       }
 
       &-text {
         margin-left: 10px;
         font: $mediumFont;
         flex: 1;
+        @media (max-width: 576px) {
+          font:  normal normal normal 14px/25px Poppins
+         }
       }
     }
   }

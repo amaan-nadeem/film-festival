@@ -7,8 +7,8 @@ import "./index.scss"
 const Hero = ({ bgImage, sliderContent, isEvent }) => (
   <section
     className={classnames(
-      "hero-section grid items-center container-padding",
-      isEvent && "eventBanner"
+      "hero-section container-padding landing-page",
+      isEvent && "eventBanner grid items-center"
     )}
     style={{ backgroundImage: `url(${bgImage.default})` }}
   >

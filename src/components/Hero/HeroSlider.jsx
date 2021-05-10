@@ -48,7 +48,7 @@ const Slider = ({ reviews, nextIcon, prevIcon }) => {
 }
 
 const HeroSlider = ({ customerReviews }) => (
-  <section className="reviews-section section-container section-margin container-padding">
+  <section className="reviews-section section-container">
     <div className="reviews-slider-container">
       <Slider reviews={customerReviews} />
     </div>

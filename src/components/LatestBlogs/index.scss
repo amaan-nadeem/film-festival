@@ -19,8 +19,9 @@
         margin-bottom: 20px;
       }
       @media (max-width: 768px) {
-        font-size: 30px;
+        font-size: 25px;
         font-weight: bold;
+        margin-bottom: 10px;
       }
     }
     .description {
@@ -29,8 +30,9 @@
       color: #000000;
       margin-bottom: 39px;
       @media (max-width: 768px) {
-        font-size: 18px;
+        font-size: 14px;
         margin-bottom: 0px;
+        line-height: 25px;
       }
     }
     .link {
@@ -38,6 +40,11 @@
       font-weight: 500;
       letter-spacing: 0px;
       color: #66891d;
+      @media (max-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 0px;
+        line-height: 25px;
+      }
     }
   }
   .latest-blogs-boxes {
@@ -72,22 +79,32 @@
 
       .latest-blogs-box-content {
         padding: 47px 48.335px;
+        @media (max-width: 992px) {
+          text-align: center;
+        }
         .title {
           font-size: 22px;
           @media (max-width: 992px) {
-            font-size: 22px;
+            font-size: 20px;
           }
+        }
+        @media (max-width: 576px) {
+          padding: 24px 26px;
         }
         .description {
           font-size: 18px;
           font-weight: 300;
           @media (max-width: 992px) {
-            font-size: 17px;
+            font-size: 14px;
+            text-align: center;
           }
         }
         .read-more {
           cursor: pointer;
           display: inline-block;
+          @media (max-width: 576px) {
+            font-size: 14px;
+          }
         }
       }
 

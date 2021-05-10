@@ -36,6 +36,9 @@
         @media (max-width: 768px) {
           font: normal normal 600 40px/26px Poppins;
         }
+        @media (max-width: 576px) {
+          font: normal normal 600 30px/26px Poppins;
+        }
       }
       p {
         font: normal normal normal 20px/35px Poppins;
@@ -43,6 +46,9 @@
         color: #000000;
         @media (max-width: 768px) {
           font: normal normal normal 18px/35px Poppins;
+        }
+        @media (max-width: 576px) {
+          font: normal normal normal 14px/35px Poppins;
         }
       }
     }

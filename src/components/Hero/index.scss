@@ -9,6 +9,9 @@
   margin-top: -100px;
   @media (max-width: 768px) {
     min-height: 75vh;
+    &.landing-page{
+      min-height: 85vh;
+    }
   }
 
   &.eventBanner {
@@ -71,11 +74,23 @@
   .hero-slider-main {
     z-index: 11;
     position: relative;
-    @media (max-width: 1500px) {
-      display: none;
+    transform: translate(0%, 25%);
+    max-width: 1300px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+    transform: translate(0%, 45%);
+      
     }
   }
   .hero-slider-container {
+    max-width: 1131px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      .swiper-wrapper {
+        min-height: 53vh;
+      }
+    }
+
     @media (max-width: 786px) {
       padding: 0 20px;
     }
@@ -87,14 +102,15 @@
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
-      left: 0;
+      left: 0px;
       z-index: 1;
       outline: none;
+
       @media (max-width: 786px) {
         width: 25px;
         height: 30px;
       }
-      @media (max-width: 576px) {
+      @media (max-width: 1280px) {
         display: none;
       }
     }
@@ -110,7 +126,7 @@
         width: 25px;
         height: 30px;
       }
-      @media (max-width: 576px) {
+      @media (max-width: 1280px) {
         display: none;
       }
     }
@@ -132,6 +148,15 @@
         padding: 53px 124px;
         max-width: 1131px;
         margin: 0 auto;
+        @media (max-width: 1192px) {
+          padding: 43px 100px;
+        }
+        @media (max-width: 992px) {
+          padding: 33px 80px;
+        }
+        @media (max-width: 768px) {
+          padding: 24px 34px;
+        }
 
         h1 {
           text-align: center;
@@ -139,12 +164,31 @@
           letter-spacing: 0px;
           color: #ffffff;
           padding-bottom: 30px;
+          @media (max-width: 1192px) {
+            font: normal normal bold 50px/60px Poppins;
+          }
+          @media (max-width: 992px) {
+            font: normal normal bold 40px/40px Poppins;
+          }
+          @media (max-width: 768px) {
+            font: normal normal bold 20px/30px Poppins;
+            padding-bottom: 20px;
+          }
         }
         p {
           font: normal normal normal 25px/40px Poppins;
           letter-spacing: 0px;
           color: #ffffff;
           text-align: center;
+          @media (max-width: 1192px) {
+            font: normal normal normal 22px/35px Poppins;
+          }
+          @media (max-width: 992px) {
+            font: normal normal normal 20px/30px Poppins;
+          }
+          @media (max-width: 768px) {
+            font: normal normal normal 14px/25px Poppins;
+          }
         }
       }
     }

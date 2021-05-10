@@ -20,7 +20,7 @@ const TestimonialsCard = ({
       <p className="description mt-2">{description}</p>
       <div className="ratings flex justify-center">
         {Array.from({ length: ratings }).map((_, key) => (
-          <div className="mr-4">
+          <div>
             <StarIcon key={key} fill="#222" />
           </div>
         ))}
@@ -92,7 +92,7 @@ const Slider = ({ testimonials, nextIcon, prevIcon }) => {
 }
 
 const TestimonialsSlider = ({ testimonials }) => (
-  <section className="testimonials-slider-section section-container container-padding">
+  <section className="testimonials-slider-section section-container">
     <Slider testimonials={testimonials} />
   </section>
 )
