@@ -17,52 +17,194 @@ import AwardCategories from "../components/AwardCategories"
 import scheduledFestivalsData from "../site-data/scheduled-festivals"
 import submissionsData from "../site-data/submissions"
 import awardCategoriesData from "../site-data/award-categories"
+import { graphql } from "gatsby"
 
-const Events = () => {
+export const eventPageQuery = graphql`
+  query {
+    allContentfulEventPage {
+      edges {
+        node {
+          heroSectionTitle
+          heroSectionDescription {
+            heroSectionDescription
+          }
+          heroBgImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          heroSectionDateRange {
+            heroSectionDateRange
+          }
+          featuresSectionTitle
+          featuresBoxes {
+            title
+            description {
+              description
+            }
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          festivalScheduleSectionTitle
+          festivalEventsSectionDescription {
+            festivalEventsSectionDescription
+          }
+          festivalScheduleContentBoxes {
+            title
+            itineraryTimes
+            itineraryDescriptions
+            screenOrderText
+            confirmedAttendingFilms
+            ticketBuyingLink
+          }
+          submissionsSectionTitle
+          submissionsCategoriesListingTitle
+          submissionsCategoriesListing
+          submissionsSectionContentBoxes {
+            title
+            description {
+              description
+            }
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          awardCategoriesSectionTitle
+          awardCategoriesListingBoxes {
+            title
+            categoriesListing
+          }
+          awardCategoriesSectionPercentageBoxes {
+            title
+            description {
+              description
+            }
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          festivalEventsSectionTitle
+          festivalEventsSectionDescription {
+            festivalEventsSectionDescription
+          }
+          festivalEvents {
+            title
+            description {
+              description
+            }
+            descriptiveLink
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          socialMediaSectionTitle
+          socialMediaBoxes {
+            cardImage {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            mediaPlatformIcon {
+              file {
+                url
+              }
+            }
+            platformPageLink
+          }
+        }
+      }
+    }
+  }
+`
+
+const Events = ({ data }) => {
+  const {
+    allContentfulEventPage: {
+      edges: [
+        {
+          node: {
+            heroSectionTitle,
+            heroSectionDescription,
+            heroBgImage,
+            heroSectionDateRange,
+            featuresSectionTitle,
+            featuresBoxes,
+            festivalScheduleSectionTitle,
+            festivalScheduleContentBoxes,
+            submissionsSectionTitle,
+            submissionsCategoriesListingTitle,
+            submissionsCategoriesListing,
+            submissionsSectionContentBoxes,
+            awardCategoriesSectionTitle,
+            awardCategoriesListingBoxes,
+            awardCategoriesSectionPercentageBoxes,
+            festivalEventsSectionTitle,
+            festivalEventsSectionDescription,
+            festivalEvents,
+            socialMediaSectionTitle,
+            socialMediaBoxes,
+          },
+        },
+      ],
+    },
+  } = data
   return (
     <Layout>
       <SEO title="Events" />
       <div className="top-section">
         <Header />
         <Hero
+          title={heroSectionTitle}
+          description={heroSectionDescription?.heroSectionDescription}
+          dateRange={heroSectionDateRange?.heroSectionDateRange}
           isEvent
-          bgImage={heroSectionData.heroBgImage}
-          sliderContent={heroSectionData.heroSliderContent}
+          bgImage={heroBgImage?.fluid?.src}
         />
       </div>
       <Features
-        title={featuresData.title}
+        title={featuresSectionTitle}
         description={featuresData.description}
-        contentBoxes={featuresData.featureBoxes}
+        contentBoxes={featuresBoxes}
       />
       <ScheduledFestivals
         isBgGray
-        title={scheduledFestivalsData.title}
-        festivals={scheduledFestivalsData.festivals}
+        title={festivalScheduleSectionTitle}
+        festivals={festivalScheduleContentBoxes}
       />
       <Submissions
-        title={submissionsData.title}
-        contentBoxes={submissionsData.contentBoxes}
-        categoriesListing={submissionsData.categoriesListing}
+        title={submissionsSectionTitle}
+        contentBoxes={submissionsSectionContentBoxes}
+        categoriesListing={submissionsCategoriesListing}
+        categoriesListingTitle={submissionsCategoriesListingTitle}
       />
       <AwardCategories
         isBgGray
-        title={awardCategoriesData.title}
-        percentageBoxes={awardCategoriesData.percentageBoxes}
-        listing={awardCategoriesData.listing}
+        title={awardCategoriesSectionTitle}
+        percentageBoxes={awardCategoriesSectionPercentageBoxes}
+        listing={awardCategoriesListingBoxes}
       />
       <FilmsSlider films={[{}, {}, {}, {}]} />
       <LatestBlogs
         isBgGray
-        title={latestBlogsData.title}
-        description={latestBlogsData.description}
+        title={festivalEventsSectionTitle}
+        description={
+          festivalEventsSectionDescription.festivalEventsSectionDescription
+        }
         // linkText={latestBlogsData.linkText}
-        blogs={latestBlogsData.blogs}
+        blogs={festivalEvents}
       />
-
       <SocialMedia
-        title={socialMediaData.title}
-        mediaPlatforms={socialMediaData.mediaPlatforms}
+        title={socialMediaSectionTitle}
+        mediaPlatforms={socialMediaBoxes}
       />
     </Layout>
   )

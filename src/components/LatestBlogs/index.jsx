@@ -34,12 +34,12 @@ const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
         </div>
         {windowWidth[0] >= 1080 && (
           <div className="latest-blogs-boxes justify-center grid sm:grid-cols-2 gap-5 lg:flex">
-            {blogs.map(({ title, description, image, readMoreText }) => (
+            {blogs.map(({ title, description: { description }, image }) => (
               <BlogCard
                 title={title}
                 description={description}
-                image={image}
-                readMoreText={readMoreText}
+                image={image?.fluid?.src}
+                readMoreText="READ MORE"
               />
             ))}
           </div>
@@ -47,13 +47,13 @@ const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
         {windowWidth[0] < 1080 && (
           <div className="latest-blogs-slider-container latest-blogs-boxes">
             <Slider>
-              {blogs.map(({ title, description, image, readMoreText }) => (
+              {blogs.map(({ title, description: { description }, image }) => (
                 <div>
                   <BlogCard
                     title={title}
                     description={description}
-                    image={image}
-                    readMoreText={readMoreText}
+                    image={image?.fluid?.src}
+                    readMoreText="READ MORE"
                   />
                 </div>
               ))}

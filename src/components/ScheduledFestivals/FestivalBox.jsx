@@ -3,30 +3,33 @@ import "./index.scss"
 import classNames from "classnames"
 
 const FestivalBox = ({
-  title,
-  times,
-  link,
-  points,
   buyTicketsLink,
   btnText,
   className,
+  title,
+  itineraryTimes,
+  itineraryDescriptions,
+  screenOrderText,
+  confirmedAttendingFilms,
 }) => (
   <div className={classNames("festivalContainer", className)}>
     <h3 className="box-heading">{title}</h3>
     <ul className="itinerary">
-      {times?.length > 0 &&
-        times.map(({ time, activity }) => (
+      {itineraryTimes?.length > 0 &&
+        itineraryTimes.map((time, index) => (
           <li key={time}>
             <span className="itinerary-time">{time}</span>
-            <span className="itinerary-text">{activity}</span>
+            <span className="itinerary-text">
+              {itineraryDescriptions[index]}
+            </span>
           </li>
         ))}
     </ul>
-    <p className="festival-link" href={link}>
-      Screening Order of Confirmed Attending Films
+    <p className="festival-link">
+      {screenOrderText}
     </p>
     <ul className="festival-points">
-      {points.map((point, idx) => (
+      {confirmedAttendingFilms.map((point, idx) => (
         <li key={idx} className="point">
           <span className="point-number">{idx + 1}.</span>
           <span className="point-text">{point}</span>

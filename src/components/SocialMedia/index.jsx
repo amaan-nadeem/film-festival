@@ -2,15 +2,19 @@ import React from "react"
 import "./index.scss"
 import useWindowSize from "../../utils/useWindowWidth"
 import Slider from "../common/Slider"
+import { Link } from "gatsby"
 
-const SocialMediaCard = ({ image, Icon }) => (
-  <div className="card">
-    <Icon />
-    <img src={image} />
-  </div>
+const SocialMediaCard = ({ image, icon, platformPageLink }) => (
+  <Link to={platformPageLink}>
+    <div className="card">
+      <img className="icon" src={icon} alt="" />
+      <img src={image} alt="" />
+    </div>
+  </Link>
 )
 const SocialMedia = ({ title, mediaPlatforms }) => {
   const windowWidth = useWindowSize()
+  console.log("mediaPlatform", mediaPlatforms)
   return (
     <section className="section-padding">
       <div className="app-social-media-section ">
@@ -19,20 +23,32 @@ const SocialMedia = ({ title, mediaPlatforms }) => {
         </div>
         {windowWidth[0] >= 1080 && (
           <div className="media-platforms grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-            {mediaPlatforms.map(({ image, Icon }) => (
-              <SocialMediaCard image={image} Icon={Icon} />
-            ))}
+            {mediaPlatforms.map(
+              ({ mediaPlatformIcon, cardImage, platformPageLink }) => (
+                <SocialMediaCard
+                  image={cardImage?.fluid?.src}
+                  icon={mediaPlatformIcon?.file?.url}
+                  platformPageLink={platformPageLink}
+                />
+              )
+            )}
           </div>
         )}
 
         {windowWidth[0] < 1080 && (
           <div className="social-media-slider-container media-platforms">
             <Slider>
-              {mediaPlatforms.map(({ image, Icon }) => (
-                <div>
-                  <SocialMediaCard image={image} Icon={Icon} />
-                </div>
-              ))}
+              {mediaPlatforms.map(
+                ({ mediaPlatformIcon, cardImage, platformPageLink }) => (
+                  <div>
+                    <SocialMediaCard
+                      image={cardImage?.fluid?.src}
+                      icon={mediaPlatformIcon?.file?.url}
+                      platformPageLink={platformPageLink}
+                    />
+                  </div>
+                )
+              )}
             </Slider>
           </div>
         )}

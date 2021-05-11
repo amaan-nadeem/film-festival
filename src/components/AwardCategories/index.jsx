@@ -26,11 +26,11 @@ const AwardCategories = ({ isBgGray, title, percentageBoxes, listing }) => {
     >
       {windowWidth[0] >= 1080 && (
         <div className="percentage-boxes grid grid-cols-3 lg:grid-cols-4 justify-center items-center">
-          {percentageBoxes.map(({ title, description, logo }) => (
+          {percentageBoxes.map(({ title, description, image }) => (
             <PercentageBox
               title={title}
-              description={description}
-              logo={logo}
+              description={description?.description}
+              logo={image?.fluid?.src}
             />
           ))}
         </div>
@@ -40,12 +40,12 @@ const AwardCategories = ({ isBgGray, title, percentageBoxes, listing }) => {
         {windowWidth[0] < 1080 && (
           <div className="award-categories-slider-container percentage-boxes">
             <Slider>
-              {percentageBoxes.map(({ title, description, logo }) => (
+              {percentageBoxes.map(({ title, description, image }) => (
                 <div>
                   <PercentageBox
                     title={title}
-                    description={description}
-                    logo={logo}
+                    description={description?.description}
+                    logo={image?.fluid?.src}
                   />
                 </div>
               ))}
@@ -54,8 +54,8 @@ const AwardCategories = ({ isBgGray, title, percentageBoxes, listing }) => {
         )}
       </div>
       <div className="award-categories-listing grid lg:grid-cols-2 gap-10 container-padding">
-        {listing.map(({ ...eve }) => (
-          <FestivalBox {...eve} />
+        {listing.map(({ title, categoriesListing }) => (
+          <FestivalBox title={title} confirmedAttendingFilms={categoriesListing} />
         ))}
       </div>
     </SectionWrapper>

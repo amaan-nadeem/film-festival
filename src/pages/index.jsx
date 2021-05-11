@@ -15,40 +15,158 @@ import Timeline from "../components/Timeline"
 import TimelineData from "../site-data/timeline"
 import SocialMedia from "../components/SocialMedia"
 import socialMediaData from "../site-data/social-media"
+import { graphql } from "gatsby"
 
-const IndexPage = () => {
+export const landingPageQuery = graphql`
+  query {
+    allContentfulLandingPage {
+      edges {
+        node {
+          heroSliderCards {
+            title
+            description {
+              description
+            }
+            learnMoreBtnLink
+          }
+          heroBgImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          featureSectionTitle
+          featureBoxes {
+            title
+            description {
+              description
+            }
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          festivalTimelineBoxes {
+            festivalTitle
+            festivalDate
+            festivalDescription {
+              festivalDescription
+            }
+            festivalLogo {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          testimonialsSectionTitle
+          testimonialsSectionDescription {
+            testimonialsSectionDescription
+          }
+          testimonials {
+            avatar {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            reviewer
+            occupation
+            rating
+            review {
+              review
+            }
+          }
+          blogsSectionTitle
+          blogsSectionDescription {
+            blogsSectionDescription
+          }
+          blogs {
+            title
+            description {
+              description
+            }
+            descriptiveLink
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+          socialMediaSectionTitle
+          socialMediaCards {
+            mediaPlatformIcon{
+              file{
+                url
+              }
+            }
+            cardImage {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            platformPageLink
+          }
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({ data }) => {
+  const {
+    allContentfulLandingPage: {
+      edges: [
+        {
+          node: {
+            heroSliderCards,
+            heroBgImage,
+            featureSectionTitle,
+            featureBoxes,
+            festivalTimelineBoxes,
+            testimonialsSectionTitle,
+            testimonialsSectionDescription,
+            testimonials,
+            blogsSectionTitle,
+            blogsSectionDescription,
+            blogs,
+            socialMediaSectionTitle,
+            socialMediaCards,
+          },
+        },
+      ],
+    },
+  } = data
+  console.log("heroImage", heroBgImage.fluid.src)
   return (
     <Layout>
       <SEO title="Home" />
       <div className="top-section">
         <Header />
-        <Hero
-          bgImage={heroSectionData.heroBgImage}
-          sliderContent={heroSectionData.heroSliderContent}
-        />
+        <Hero bgImage={heroBgImage.fluid.src} sliderContent={heroSliderCards} />
       </div>
       <Features
-        title={featuresData.title}
+        title={featureSectionTitle}
         description={featuresData.description}
-        contentBoxes={featuresData.featureBoxes}
+        contentBoxes={featureBoxes}
       />
-      <Timeline data={{ TimelineData }} />
+      <Timeline festivalTimelineBoxes={festivalTimelineBoxes} />
       <LatestBlogs
         isBgGray
-        title={latestBlogsData.title}
-        description={latestBlogsData.description}
+        title={blogsSectionTitle}
+        description={blogsSectionDescription.blogsSectionDescription}
         linkText={latestBlogsData.linkText}
-        blogs={latestBlogsData.blogs}
+        blogs={blogs}
       />
       <FilmsSlider films={[{}, {}, {}, {}]} />
       <Testimonials
-        title={testimonialsData.title}
-        description={testimonialsData.description}
-        testimonials={testimonialsData.testimonials}
+        title={testimonialsSectionTitle}
+        description={
+          testimonialsSectionDescription.testimonialsSectionDescription
+        }
+        testimonials={testimonials}
       />
       <SocialMedia
-        title={socialMediaData.title}
-        mediaPlatforms={socialMediaData.mediaPlatforms}
+        title={socialMediaSectionTitle}
+        mediaPlatforms={socialMediaCards}
       />
     </Layout>
   )

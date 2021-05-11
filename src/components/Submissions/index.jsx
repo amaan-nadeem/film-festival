@@ -6,15 +6,27 @@ import "./index.scss"
 import useWindowSize from "../../utils/useWindowWidth"
 import Slider from "../common/Slider"
 
-const Submissions = ({ isBgGray, title, contentBoxes, categoriesListing }) => {
+const Submissions = ({
+  isBgGray,
+  title,
+  contentBoxes,
+  categoriesListingTitle,
+  categoriesListing,
+}) => {
   const windowWidth = useWindowSize()
 
   return (
     <SectionWrapper className="submissions" isBgGray={isBgGray} title={title}>
       {windowWidth[0] >= 1080 && (
         <div className="submission-boxes justify-center grid sm:grid-cols-2 gap-5 md:flex">
-          {contentBoxes.map(({ title, description, logo }) => (
-            <ContentCard title={title} description={description} logo={logo} />
+          {contentBoxes.map(({ title, description, image }) => (
+            <div>
+              <ContentCard
+                title={title}
+                description={description?.description}
+                logo={image?.fluid?.src}
+              />
+            </div>
           ))}
         </div>
       )}
@@ -22,12 +34,12 @@ const Submissions = ({ isBgGray, title, contentBoxes, categoriesListing }) => {
         {windowWidth[0] < 1080 && (
           <div className="submissions-slider-container">
             <Slider>
-              {contentBoxes.map(({ title, description, logo }) => (
+              {contentBoxes.map(({ title, description, image }) => (
                 <div>
                   <ContentCard
                     title={title}
-                    description={description}
-                    logo={logo}
+                    description={description?.description}
+                    logo={image?.fluid?.src}
                   />
                 </div>
               ))}
@@ -36,8 +48,8 @@ const Submissions = ({ isBgGray, title, contentBoxes, categoriesListing }) => {
         )}
       </div>
       <CategoriesListing
-        title={categoriesListing.title}
-        categories={categoriesListing.categories}
+        title={categoriesListingTitle}
+        categories={categoriesListing}
       />
     </SectionWrapper>
   )

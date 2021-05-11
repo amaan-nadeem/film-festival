@@ -66,15 +66,15 @@ const Slider = ({ testimonials, nextIcon, prevIcon }) => {
     <div className="testimonials-slider-container">
       <Swiper {...params} ref={swiperRef}>
         {testimonials.map(
-          ({ title, description, occupation, avatar, ratings }) => {
+          ({ reviewer, review, occupation, avatar, rating }) => {
             return (
               <div>
                 <TestimonialsCard
-                  title={title}
-                  description={description}
+                  title={reviewer}
+                  description={review.review}
                   occupation={occupation}
-                  ratings={ratings}
-                  avatar={avatar}
+                  ratings={rating}
+                  avatar={avatar?.fluid?.src}
                 />
               </div>
             )

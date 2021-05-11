@@ -26,7 +26,7 @@ const Slider = ({ reviews, nextIcon, prevIcon }) => {
   return (
     <div className="hero-slider-container">
       <Swiper {...params} ref={swiperRef}>
-        {reviews.map(({ title, description }) => {
+        {reviews.map(({ title, description: { description } }) => {
           return (
             <div className="hero-slider-card" key={title}>
               <div className="wrapper">

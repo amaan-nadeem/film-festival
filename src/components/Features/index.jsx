@@ -15,24 +15,44 @@ const Features = ({ title, contentBoxes }) => {
       </div>
       {windowWidth[0] >= 1080 && (
         <div className="feature-boxes justify-center grid sm:grid-cols-2 gap-10 lg:flex">
-          {contentBoxes.map(({ title, description, logo }) => (
-            <ContentCard title={title} description={description} logo={logo} />
-          ))}
+          {contentBoxes.map(
+            ({
+              title,
+              description,
+              image: {
+                fluid: { src },
+              },
+            }) => (
+              <ContentCard
+                title={title}
+                description={description.description}
+                logo={src}
+              />
+            )
+          )}
         </div>
       )}
       <div>
         {windowWidth[0] < 1080 && (
           <div className="features-slider-container">
             <Slider contentBoxes={contentBoxes}>
-              {contentBoxes.map(({ title, description, logo }) => (
-                <div>
-                  <ContentCard
-                    title={title}
-                    description={description}
-                    logo={logo}
-                  />
-                </div>
-              ))}
+              {contentBoxes.map(
+                ({
+                  title,
+                  description,
+                  image: {
+                    fluid: { src },
+                  },
+                }) => (
+                  <div>
+                    <ContentCard
+                      title={title}
+                      description={description.description}
+                      logo={src}
+                    />
+                  </div>
+                )
+              )}
             </Slider>
           </div>
         )}
