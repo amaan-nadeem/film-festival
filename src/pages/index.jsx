@@ -41,8 +41,8 @@ export const landingPageQuery = graphql`
               description
             }
             image {
-              fluid {
-                ...GatsbyContentfulFluid
+              fixed {
+                ...GatsbyContentfulFixed
               }
             }
           }
@@ -86,15 +86,15 @@ export const landingPageQuery = graphql`
             }
             descriptiveLink
             image {
-              fluid {
-                ...GatsbyContentfulFluid
+              fixed(width: 600, height: 600) {
+                ...GatsbyContentfulFixed
               }
             }
           }
           socialMediaSectionTitle
           socialMediaCards {
-            mediaPlatformIcon{
-              file{
+            mediaPlatformIcon {
+              file {
                 url
               }
             }
@@ -104,6 +104,20 @@ export const landingPageQuery = graphql`
               }
             }
             platformPageLink
+          }
+          filmFestivalSectionTitle
+          filmFestivalSectionDescription {
+            filmFestivalSectionDescription
+          }
+          filmFestivalSectionVideosThumbnail {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          filmFestivalVideos {
+            file {
+              url
+            }
           }
         }
       }
@@ -130,24 +144,23 @@ const IndexPage = ({ data }) => {
             blogs,
             socialMediaSectionTitle,
             socialMediaCards,
+            filmFestivalSectionTitle,
+            filmFestivalSectionDescription,
+            filmFestivalVideos,
+            filmFestivalSectionVideosThumbnail,
           },
         },
       ],
     },
   } = data
-  console.log("heroImage", heroBgImage.fluid.src)
   return (
     <Layout>
       <SEO title="Home" />
       <div className="top-section">
         <Header />
-        <Hero bgImage={heroBgImage.fluid.src} sliderContent={heroSliderCards} />
+        <Hero bgImage={heroBgImage.fluid} sliderContent={heroSliderCards} />
       </div>
-      <Features
-        title={featureSectionTitle}
-        description={featuresData.description}
-        contentBoxes={featureBoxes}
-      />
+      <Features title={featureSectionTitle} contentBoxes={featureBoxes} />
       <Timeline festivalTimelineBoxes={festivalTimelineBoxes} />
       <LatestBlogs
         isBgGray
@@ -156,7 +169,14 @@ const IndexPage = ({ data }) => {
         linkText={latestBlogsData.linkText}
         blogs={blogs}
       />
-      <FilmsSlider films={[{}, {}, {}, {}]} />
+      <FilmsSlider
+        title={filmFestivalSectionTitle}
+        description={
+          filmFestivalSectionDescription?.filmFestivalSectionDescription
+        }
+        films={filmFestivalVideos}
+        videosThumbnail={filmFestivalSectionVideosThumbnail}
+      />
       <Testimonials
         title={testimonialsSectionTitle}
         description={

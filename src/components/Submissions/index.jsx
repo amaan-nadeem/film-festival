@@ -24,7 +24,7 @@ const Submissions = ({
               <ContentCard
                 title={title}
                 description={description?.description}
-                logo={image?.fluid?.src}
+                logo={image?.fixed}
               />
             </div>
           ))}
@@ -39,7 +39,7 @@ const Submissions = ({
                   <ContentCard
                     title={title}
                     description={description?.description}
-                    logo={image?.fluid?.src}
+                    logo={image?.fixed}
                   />
                 </div>
               ))}

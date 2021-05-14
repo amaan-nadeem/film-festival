@@ -43,8 +43,8 @@ export const eventPageQuery = graphql`
               description
             }
             image {
-              fluid {
-                ...GatsbyContentfulFluid
+              fixed {
+                ...GatsbyContentfulFixed
               }
             }
           }
@@ -69,8 +69,8 @@ export const eventPageQuery = graphql`
               description
             }
             image {
-              fluid {
-                ...GatsbyContentfulFluid
+              fixed {
+                ...GatsbyContentfulFixed
               }
             }
           }
@@ -120,6 +120,20 @@ export const eventPageQuery = graphql`
             }
             platformPageLink
           }
+          filmsSectionTitle
+          filmsSectionDescription {
+            filmsSectionDescription
+          }
+          filmsSectionVideos {
+            file {
+              url
+            }
+          }
+          filmsSectionVideosThumbnail {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
@@ -152,6 +166,10 @@ const Events = ({ data }) => {
             festivalEvents,
             socialMediaSectionTitle,
             socialMediaBoxes,
+            filmsSectionTitle,
+            filmsSectionDescription,
+            filmsSectionVideosThumbnail,
+            filmsSectionVideos,
           },
         },
       ],
@@ -167,7 +185,7 @@ const Events = ({ data }) => {
           description={heroSectionDescription?.heroSectionDescription}
           dateRange={heroSectionDateRange?.heroSectionDateRange}
           isEvent
-          bgImage={heroBgImage?.fluid?.src}
+          bgImage={heroBgImage?.fluid}
         />
       </div>
       <Features
@@ -192,7 +210,12 @@ const Events = ({ data }) => {
         percentageBoxes={awardCategoriesSectionPercentageBoxes}
         listing={awardCategoriesListingBoxes}
       />
-      <FilmsSlider films={[{}, {}, {}, {}]} />
+      <FilmsSlider
+        title={filmsSectionTitle}
+        description={filmsSectionDescription?.filmsSectionDescription}
+        videosThumbnail={filmsSectionVideosThumbnail}
+        films={filmsSectionVideos}
+      />
       <LatestBlogs
         isBgGray
         title={festivalEventsSectionTitle}

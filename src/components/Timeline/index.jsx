@@ -1,7 +1,8 @@
 import React from "react"
 import TimelineBox from "../TimelineBox"
 import "./index.scss"
-import moment from "moment";
+import moment from "moment"
+import Img from "gatsby-image"
 
 const TimeLine = ({ festivalTimelineBoxes }) => (
   <div className="timelineWrapper container-padding">
@@ -28,14 +29,11 @@ const TimeLine = ({ festivalTimelineBoxes }) => (
 
           <div className="timelineElement-date">
             <div className="timelineElement-dateWrapper">
-              <p>{moment(festivalDate).format('MMM DD, YYYY')}</p>
+              <p>{moment(festivalDate).format("MMM DD, YYYY")}</p>
             </div>
-
-            <img
-              src={festivalLogo.fluid.src}
-              alt=""
-              className="timelineElement-logo"
-            />
+            <div className="timelineElement-logo">
+              <img src={festivalLogo.fluid.src} alt="" />
+            </div>
           </div>
         </div>
       )

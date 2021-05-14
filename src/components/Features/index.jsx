@@ -20,13 +20,13 @@ const Features = ({ title, contentBoxes }) => {
               title,
               description,
               image: {
-                fluid: { src },
+                fixed,
               },
             }) => (
               <ContentCard
                 title={title}
                 description={description.description}
-                logo={src}
+                logo={fixed}
               />
             )
           )}
@@ -41,14 +41,14 @@ const Features = ({ title, contentBoxes }) => {
                   title,
                   description,
                   image: {
-                    fluid: { src },
+                    fixed,
                   },
                 }) => (
                   <div>
                     <ContentCard
                       title={title}
                       description={description.description}
-                      logo={src}
+                      logo={fixed}
                     />
                   </div>
                 )

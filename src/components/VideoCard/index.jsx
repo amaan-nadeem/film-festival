@@ -3,13 +3,13 @@ import YouTube from "react-youtube"
 import "./index.scss"
 import PlayButton from "./PlayButton"
 
-const VideoCard = ({ video, poster, variant, youtubeId }) => {
+const VideoCard = ({ video, poster, variant, youtubeId, videoIndex }) => {
   const [isControl, setIsControl] = useState(false)
-  const [btnText, setBtnText] = useState("Play Video")
+
   const onVideoPlay = () => {
     setIsControl(!isControl)
-    const video = document.getElementsByTagName("video")[0]
-    const videoButton = document.getElementsByClassName("video-overlay")[0]
+    const video = document.getElementsByTagName("video")[videoIndex]
+    const videoButton = document.getElementsByClassName("video-overlay")[videoIndex]
     if (isControl) {
       video.pause()
     } else {

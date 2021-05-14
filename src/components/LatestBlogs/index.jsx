@@ -4,10 +4,11 @@ import React from "react"
 import "./index.scss"
 import useWindowSize from "../../utils/useWindowWidth"
 import Slider from "../common/Slider"
+import Img from "gatsby-image"
 
 const BlogCard = ({ title, description, image, readMoreText }) => (
   <div className={"latest-blogs-box flex flex-col justify-center"} key={title}>
-    <img className="image" src={image} alt="" />
+    <Img className="image" fixed={image} alt="" />
     <div className="latest-blogs-box-content mt-5">
       <h2 className="title font-semibold">{title}</h2>
       <p className="description mt-2">{description}</p>
@@ -38,7 +39,7 @@ const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
               <BlogCard
                 title={title}
                 description={description}
-                image={image?.fluid?.src}
+                image={image?.fixed}
                 readMoreText="READ MORE"
               />
             ))}
@@ -52,7 +53,7 @@ const LatestBlogs = ({ title, description, linkText, blogs, isBgGray }) => {
                   <BlogCard
                     title={title}
                     description={description}
-                    image={image?.fluid?.src}
+                    image={image?.fixed}
                     readMoreText="READ MORE"
                   />
                 </div>

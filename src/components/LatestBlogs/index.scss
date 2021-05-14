@@ -1,7 +1,6 @@
 .app-latest-blogs-section {
-  .latest-blogs-slider-container{
+  .latest-blogs-slider-container {
     // padding: 0px 50px;
-
   }
   .latest-blogs-content {
     margin-bottom: 82px;
@@ -56,6 +55,7 @@
     }
     // grid-gap: 91.5px;
     .latest-blogs-box {
+      max-width: 524px;
       position: relative;
       margin-right: 79px;
       background: #ffffff 0% 0% no-repeat padding-box;
@@ -63,11 +63,8 @@
       &:last-child {
         margin-right: 0;
       }
-      min-height: 321px;
-      max-width: 505px;
       @media (max-width: 1280px) {
         margin-right: 50px;
-        
       }
       @media (max-width: 1192px) {
         margin-right: 0px;
@@ -109,6 +106,8 @@
       }
 
       .image {
+        max-width: 524px;
+        max-height: 353px;
       }
     }
   }

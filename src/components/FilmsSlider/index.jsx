@@ -5,7 +5,7 @@ import { SliderLeftArrow, SliderRightArrow } from "../common/Icons"
 import VideoCard from "../VideoCard"
 import "./index.scss"
 
-const Slider = ({ films }) => {
+const Slider = ({ films, videosThumbnail }) => {
   const swiperRef = useRef(null)
   const params = {
     slidesPerView: 2,
@@ -38,14 +38,15 @@ const Slider = ({ films }) => {
   return (
     <div className="films-slider-container">
       <Swiper {...params} ref={swiperRef}>
-        {films.map(({ title, description, occupation, avatar, ratings }) => {
+        {films.map(({ file: { url } }, index) => {
           return (
-            <div>
+            <div key={url}>
               <VideoCard
-                video={require("../../assets/video.mp4")}
-                poster={require("../../site-data/Hero/hero-bg.jpg").default}
+                video={url}
+                poster={videosThumbnail?.src}
                 variant=""
                 youtubeId=""
+                videoIndex={index}
               />
             </div>
           )
@@ -61,18 +62,21 @@ const Slider = ({ films }) => {
   )
 }
 
-const FilmsSlider = ({ films, isBgGray }) => (
+const FilmsSlider = ({
+  isBgGray,
+  title,
+  description,
+  films,
+  videosThumbnail,
+}) => (
   <section
     className={classnames("films-slider-section", isBgGray && "bg-gray")}
   >
     <div className="section-padding-bottom section-container section-margin container-padding">
-      <h1 className="title section-heading">Watch Films Now!</h1>
-      <p className="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae
-        fringilla magna.
-      </p>
+      <h1 className="title section-heading">{title}</h1>
+      <p className="description">{description}</p>
       <div className="films-slider-section">
-        <Slider films={films} />
+        <Slider films={films} videosThumbnail={videosThumbnail?.fluid} />
       </div>
     </div>
   </section>

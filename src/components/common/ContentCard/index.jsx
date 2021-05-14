@@ -1,5 +1,6 @@
 import React from "react"
 import "./index.scss"
+import Img from "gatsby-image"
 
 const ContentCard = ({ title, logo, description }) => (
   <div
@@ -7,7 +8,7 @@ const ContentCard = ({ title, logo, description }) => (
     key={title}
   >
     <div className="logo-container">
-      <img className="logo" src={logo} alt="" />
+      <Img className="logo" fixed={logo} alt="" />
     </div>
     <div className="content-box-content mt-5">
       <h2 className="title font-bold">{title}</h2>
