@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 
 const BlogCard = ({ title, description, image, readMoreText }) => (
   <div className={"latest-blogs-box flex flex-col justify-center"} key={title}>
-    <Img className="image" fixed={image} alt="" />
+    <img className="image" src={image.src} alt="" />
     <div className="latest-blogs-box-content mt-5">
       <h2 className="title font-semibold">{title}</h2>
       <p className="description mt-2">{description}</p>

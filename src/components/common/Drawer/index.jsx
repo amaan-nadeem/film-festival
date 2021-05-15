@@ -7,7 +7,7 @@ import { navigate } from "gatsby"
 const Drawer = ({ setIsActive, isActive }) => (
   <>
     <div className="sideMenu" style={{ right: isActive ? "0" : "-300px" }}>
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col justify-between">
         <ul>
           <li
             className="flex justify-between items-center"
